@@ -1,0 +1,76 @@
+\documentclass{article}
+
+% Importing required packages
+\usepackage[a4paper, total={6in, 11in}]{geometry} % Adjust margins
+\usepackage{amsmath} % For math environments
+\usepackage{hyperref} % For hyperlinks
+\usepackage{graphicx} % For including images
+\usepackage{fancyhdr} % For headers and footers
+\pagestyle{fancy} % Enable custom page style
+
+% Custom header and footer
+\fancyhead[L]{}
+\fancyhead[C]{DSC 180A Methodology Assignment 5}
+\fancyhead[R]{}
+\fancyfoot[C]{}
+
+% Title and author details
+\title{DSC 180A Methodology Assignment 5}
+\author{Luke Lin (lul018@ucsd.edu)}
+\date{Birthday: December 4, 2002}
+
+\begin{document}
+
+\maketitle
+
+\section{Deviations}
+
+\subsection{Setup}
+Consider a sample of \( n \) values, \( x_1, x_2, \ldots, x_n \), and let $\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i.$ Then, the sum of deviations from each \( x_i \) to \( \bar{x} \) is 0:
+
+\begin{align*}
+\sum_{i=1}^n (x_i - \bar{x}) &= \sum_{i=1}^n x_i - \sum_{i=1}^n \bar{x} \\
+&= n\bar{x} - n\bar{x} \\
+&= \fbox{0}
+\end{align*}
+
+\subsection{Runtime Analysis}
+What is the asymptotic runtime of \texttt{standard\_deviation}, where \( n = \texttt{len(xs)} \)?
+
+\begin{verbatim}
+def standard_deviation(xs):
+    return (sum([(x - sum(xs) / len(xs)) ** 2 for x in xs]) / len(xs)) ** 0.5
+\end{verbatim}
+
+
+\begin{array}{|c|c|}
+\hline
+O(n) & O(\log n) \\
+\hline
+O(\log n) & O(n \log n) \\
+\hline
+\end{array}
+
+
+\section{Trivia}
+How many of the following sentences (some of which are taken from \href{https://www.signupgenius.com/groups/true-or-false-questions.cfm}{here}) are true?
+
+\begin{enumerate}
+    \item Caesar Salad originates from Italy.
+    \item Brazil is the only nation to have played in every World Cup finals tournament.
+    \item The original Costco location is in San Diego.
+\end{enumerate}
+
+\section{Picture}
+Here’s a picture of my dog, ``Junior."
+
+\begin{center}
+    \includegraphics[width=0.25\textwidth]{junior.png} 
+\end{center}
+
+\begin{itemize}
+    \item He’s 14 years old.
+    \item He’s a cockapoo.
+\end{itemize}
+
+\end{document}
